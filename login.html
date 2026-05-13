@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: white;
+    padding: 30px;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #4facfe;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #4facfe;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3a8de0;
+}
+
+.message {
+    text-align: center;
+    margin-top: 10px;
+    color: red;
+}
+</style>
+
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Login</h2>
+
+    <div class="input-group">
+        <input type="text" id="username" placeholder="Username">
+    </div>
+
+    <div class="input-group">
+        <input type="email" id="email" placeholder="Email">
+    </div>
+
+    <div class="input-group">
+        <input type="password" id="password" placeholder="Password">
+    </div>
+
+    <button onclick="login()">Login</button>
+
+    <div class="message" id="msg"></div>
+</div>
+
+<script>
+    function login() {
+    let username = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let msg = document.getElementById("msg");
+
+    if(username === "" || email === "" || password === "") {
+        msg.innerText = "من فضلك املأ كل البيانات";
+        return;
+    }
+
+    if(password.length < 6) {
+        msg.innerText = "كلمة المرور لازم تكون 6 حروف على الأقل";
+        return;
+    }
+
+    msg.style.color = "green";
+    msg.innerText = "تم تسجيل الدخول بنجاح ✅";
+
+    // ✅ نحفظ إن المستخدم سجل دخول
+    localStorage.setItem("loggedIn", "true");
+    localStorage.setItem("user", username);
+
+    // 🔥 التحويل لصفحة المكتبة
+    setTimeout(() => {
+        window.location.href = "project1.html";
+    }, 1000);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> premium Book Store </title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project1.css">
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Premium Book Store</h1>
+    <p>Search • Discover • Buy Books</p>
+
+    <div class="cart-icon" onclick="toggleCart()">
+        🛒
+        <span id="cart-count" class="cart-count">0</span>
+    </div>
+</header>
+
+<!-- CART -->
+<div id="cart-box">
+    <h3>🛒 Your Cart</h3>
+    <div id="cart-items"></div>
+    <hr>
+    <p>Total: <span id="total">0</span> EGP</p>
+</div>
+
+<!-- SEARCH -->
+<div class="search-box">
+    <input id="search" placeholder="Search books..." onkeyup="filterBooks()">
+</div>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h3>Categories</h3>
+        <button onclick="setCategory('All')">All</button>
+        <button onclick="setCategory('Fantasy')">Fantasy</button>
+        <button onclick="setCategory('Science')">Science</button>
+        <button onclick="setCategory('religion')">religion</button>
+        <button onclick="setCategory('History')">History</button>
+    </div>
+
+    <!-- BOOKS -->
+    <div class="books">
+
+        <!-- FANTASY -->
+        <div class="book" data-category="Fantasy">
+            <h4>Narnia</h4>
+            <img src="train/books/nirnia.jpeg" alt="">
+            <p>8000 EGP</p>
+            <button onclick="buy('Narnia',8000)">Buy</button>
+        </div>
+
+        <div class="book" data-category="Fantasy">
+            <h4>Percy Jackson</h4>
+            <img src="train/books/peryjackson.jpeg" alt="">
+            <p>8000 EGP</p>
+            <button onclick="buy('Percy Jackson',8000)">Buy</button>
+        </div>
+
+        <div class="book" data-category="Fantasy">
+            <h4>Eragon</h4>
+            <img src="train/books/eragon.jpeg " alt="books">
+            <p>8000 EGP</p>
+            <button onclick="buy('Eragon',8000)">Buy</button>
+        </div>
+
+        <div class="book" data-category="Fantasy">
+            <h4>The Witcher</h4>
+            <img src="train/books/witcher.jpeg" alt="">
+            <p>8000 EGP</p>
+            <button onclick="buy('The Witcher',8000)">Buy</button>
+        </div>
+
+        <!-- SCIENCE -->
+        <div class="book" data-category="Science">
+            <h4>Astrophysics</h4>
+            <img src="train/books/astrophysics.jpeg" alt="">
+            <p>900 EGP</p>
+            <button onclick="buy('Astrophysics',900)">Buy</button>
+        </div>
+
+        <div class="book" data-category="Science">
+            <h4>Neuroscience</h4>
+            <img src="train/books/nerouscince.jpeg" alt="">
+            <p>900 EGP</p>
+            <button onclick="buy('Neuroscience',900)">Buy</button>
+        </div>
+
+        <div class="book" data-category="Science">
+            <h4>AI Future</h4>
+            <img src="train/books/aifuture.jpeg" alt="">
+            <p>900 EGP</p>
+            <button onclick="buy('AI Future',900)">Buy</button>
+        </div>
+
+        <!-- RELIGION -->
+        <div class="book" data-category="religion">
+            <h4>live with quran</h4>
+            <img src="train/books/live with quran.jpeg" alt="">
+            <p>700 EGP</p>
+            <button onclick="buy('live with quran',700)">Buy</button>
+        </div>
+
+        <div class="book" data-category="religion">
+            <h4>meeting mohammed</h4>
+            <img src="train/books/meeting mohammed.jpeg" alt="">
+            <p>700 EGP</p>
+            <button onclick="buy('meeting mohammed',700)">Buy</button>
+        </div>
+
+        <!-- HISTORY -->
+        <div class="book" data-category="History">
+            <h4>World War II</h4>
+            <img src="train/books/worldwar2.jpeg" alt="">
+            <p>5500 EGP</p>
+            <button onclick="buy('World War II',5500)">Buy</button>
+        </div>
+
+        <div class="book" data-category="History">
+            <h4>worldwar1</h4>
+            <img src="train/books/worldwar1.jpeg" alt="">
+            <p>5500 EGP</p>
+            <button onclick="buy('worldwar1',5500)">Buy</button>
+        </div>
+          <div class="book" data-category="History">
+            <h4>Ancient Egypt</h4>
+            <img src="train/books/egypt.jpeg" alt="">
+            <p>5500 EGP</p>
+            <button onclick="buy('Ancient Egypt',5500)">Buy</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="project1.js"></script>
+
+</body>
+</html>
